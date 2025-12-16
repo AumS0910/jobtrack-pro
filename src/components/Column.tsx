@@ -8,7 +8,8 @@ interface ColumnProps {
 
 export default function Column({ title, jobs }: ColumnProps) {
     return (
-        <div className="rounded-2xl  bg-white/5 backdrop-blur border border-white/10 p-5">
+        <div className="rounded-2xl  bg-white/5 backdrop-blur border border-white/10 p-5 hover:border-indigo-400/30 transition
+">
 
 
             <h2 className="text-sm font-semibold text-zinc-200">

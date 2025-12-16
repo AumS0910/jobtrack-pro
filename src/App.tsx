@@ -1,10 +1,13 @@
-import Home from './pages/Home'
-
+import Home from './pages/Home';
+import { JobProvider } from './context/JobContext';
 function App() {
 
 
   return (
-    <Home />
+    <JobProvider>
+      <Home />
+    </JobProvider>
+
   )
 }
 

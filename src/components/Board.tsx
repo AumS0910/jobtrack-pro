@@ -1,29 +1,13 @@
-import { useState } from "react";
 import Column from "./Column";
 import JobModal from "./JobModal";
-import type { Job, JobStatus } from "../types/job";
-
-const initialJobs: Job[] = [
-    {
-        id: "1",
-        company: "Google",
-        role: "Frontend Engineer",
-        status: "Applied",
-        appliedDate: "2025-01-12",
-    },
-    {
-        id: "2",
-        company: "Barclays",
-        role: "Software Developer",
-        status: "Interview",
-        appliedDate: "2025-01-10",
-    },
-];
+import type { JobStatus } from "../types/job";
+import { useState } from "react";
+import { useJobs } from "../context/JobContext";
 
 const columns: JobStatus[] = ["Applied", "Interview", "Offer", "Rejected"];
 
 export default function Board() {
-    const [jobs, setJobs] = useState<Job[]>(initialJobs);
+    const { jobs, addJob } = useJobs();
     const [open, setOpen] = useState(false);
 
     return (
@@ -38,11 +22,11 @@ export default function Board() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {columns.map((status) => (
+                {columns.map(status => (
                     <Column
                         key={status}
                         title={status}
-                        jobs={jobs.filter((job) => job.status === status)}
+                        jobs={jobs.filter(job => job.status === status)}
                     />
                 ))}
             </div>
@@ -51,16 +35,13 @@ export default function Board() {
                 <JobModal
                     onClose={() => setOpen(false)}
                     onSubmit={(data) => {
-                        setJobs([
-                            ...jobs,
-                            {
-                                id: crypto.randomUUID(),
-                                company: data.company,
-                                role: data.role,
-                                status: data.status,
-                                appliedDate: new Date().toISOString().split("T")[0],
-                            },
-                        ]);
+                        addJob({
+                            id: crypto.randomUUID(),
+                            company: data.company,
+                            role: data.role,
+                            status: data.status,
+                            appliedDate: new Date().toISOString().split("T")[0],
+                        });
                     }}
                 />
             )}
