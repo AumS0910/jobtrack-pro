@@ -3,11 +3,14 @@ import Board from "../components/Board";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-zinc-50 text-zinc-900">
+        <div className="min-h-screen bg-[#0b0b0f] text-zinc-100">
             <Header />
-            <main className="max-w-7xl mx-auto px-6 py-10">
+            <main className="max-w-7xl mx-auto px-8 py-12">
                 <Board />
             </main>
         </div>
+
     );
 }
+
+

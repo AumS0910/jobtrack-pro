@@ -6,18 +6,25 @@ interface JobCardProps {
 
 export default function JobCard({ job }: JobCardProps) {
     return (
-        <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-3 hover:bg-zinc-100 transition">
-            <p className="text-sm font-medium text-zinc-900">
-                {job.role}
-            </p>
+        <div className="
+  rounded-xl
+  bg-[#12121a]
+  border border-white/10
+  p-4
+">
+            <div className="space-y-1">
+                <p className="text-sm font-medium text-zinc-100">
+                    {job.role}
+                </p>
+                <p className="text-xs text-zinc-400">
+                    {job.company}
+                </p>
+            </div>
 
-            <p className="text-xs text-zinc-500 mt-1">
-                {job.company}
-            </p>
-
-            <p className="text-[11px] text-zinc-400 mt-2">
-                Applied on {job.appliedDate}
+            <p className="text-[11px] text-zinc-500 mt-3">
+                Applied · {job.appliedDate}
             </p>
         </div>
+
     );
 }
