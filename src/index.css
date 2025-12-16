@@ -1,0 +1,7 @@
+@import "tailwindcss/preflight";
+@import "tailwindcss";
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-50 text-zinc-900 antialiased;
+}
