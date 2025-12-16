@@ -1,14 +1,15 @@
-import Header from "../components/Header";
 import Board from "../components/Board";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-[#0b0b0f] text-zinc-100">
-            <Header />
-            <main className="max-w-7xl mx-auto px-8 py-12">
+        <div className="h-screen w-screen bg-black text-white flex overflow-hidden gap-y-5">
+            <Sidebar />
+            <main className="flex-1 overflow-y-auto px-10 py-8 gap-y-5">
                 <Board />
             </main>
         </div>
+
 
     );
 }

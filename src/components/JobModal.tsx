@@ -61,14 +61,14 @@ export default function JobModal({ onClose, onSubmit }: JobModalProps) {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="text-sm text-zinc-400 hover:text-zinc-200"
+                            className="text-sm text-zinc-400 hover:text-zinc-200 transition duration-200"
                         >
                             Cancel
                         </button>
 
                         <button
                             type="submit"
-                            className="rounded-lg bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400"
+                            className="rounded-lg bg-indigo-500 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-400 transition duration-200"
                         >
                             Add
                         </button>

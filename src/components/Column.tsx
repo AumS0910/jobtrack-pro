@@ -1,26 +1,42 @@
-import type { Job } from "../types/job";
 import JobCard from "./JobCard";
+import type { Job } from "../types/job";
+import { statusConfig } from "../constants/statusConfig";
+import type { JobStatus } from "../types/job";
 
 interface ColumnProps {
-    title: string;
+    title: JobStatus;
     jobs: Job[];
 }
 
 export default function Column({ title, jobs }: ColumnProps) {
+    const StatusIcon = statusConfig[title].icon;
+
     return (
-        <div className="rounded-2xl  bg-white/5 backdrop-blur border border-white/10 p-5 hover:border-indigo-400/30 transition
-">
+        <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <div
+                        className={`${statusConfig[title].lightColor} ${statusConfig[title].textColor} p-2 rounded-xl`}
+                    >
+                        <StatusIcon className="w-4 h-4" />
+                    </div>
+                    <h2 className="text-sm font-semibold text-white">{title}</h2>
+                </div>
 
-
-            <h2 className="text-sm font-semibold text-zinc-200">
-                {title}
-            </h2>
+                <span className="text-xs font-semibold text-zinc-400">
+                    {jobs.length}
+                </span>
+            </div>
 
             <div className="space-y-3">
-                {jobs.map(job => (
-                    <JobCard key={job.id} job={job} />
-                ))}
+                {jobs.length === 0 ? (
+                    <div className="card text-center py-10 text-zinc-600 text-sm">
+                        No applications
+                    </div>
+                ) : (
+                    jobs.map(job => <JobCard key={job.id} job={job} />)
+                )}
             </div>
         </div>
-    )
+    );
 }
