@@ -25,7 +25,7 @@ The application is deployed on **Vercel**.
 ![Analytics](./screenshots/analytics.png)
 
 ### 🗓 Calendar View
-![Calendar](./screenshots/calendar.png)
+![Calendar](./screenshots/calender.png)
 
 ### 🌗 Dark / Light Mode
 ![Theme](./screenshots/dark-mode.png)
