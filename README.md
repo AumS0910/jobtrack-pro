@@ -19,19 +19,19 @@ The application is deployed on **Vercel**.
 ## 📸 Screenshots
 
 ### 🧩 Job Board (Kanban View)
-![Job Board](./screenshots/board.png)
+![Job Board](../screenshots/board.png)
 
 ### 📊 Analytics Dashboard
-![Analytics](./screenshots/analytics.png)
+![Analytics](../screenshots/analytics.png)
 
 ### 🗓 Calendar View
-![Calendar](./screenshots/calendar.png)
+![Calendar](../screenshots/calendar.png)
 
 ### 🌗 Dark / Light Mode
-![Theme](./screenshots/dark-mode.png)
+![Theme](../screenshots/dark-mode.png)
 
 ### ➕ Add Job Modal
-![Add Job](./screenshots/add-job-modal.png)
+![Add Job](../screenshots/add-job-modal.png)
 
 ## ✨ Features
 
