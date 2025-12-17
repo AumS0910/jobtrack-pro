@@ -3,9 +3,35 @@
 JobTrack Pro is a modern, frontend-focused job application tracking platform built using **React, TypeScript, and Tailwind CSS**.  
 It helps users visually manage their job applications across different stages using a Kanban-style board, analytics, calendar views, and a clean SaaS-inspired UI.
 
+## 🚀 Deployment
+
+The application is deployed on **Vercel**.
+
+🔗 Live URL: https://jobtrack-pro.vercel.app
+
+### Deployment Highlights
+- Automatic CI/CD via GitHub
+- Optimized production build
+- Client-side routing handled correctly
 
 
 ---
+## 📸 Screenshots
+
+### 🧩 Job Board (Kanban View)
+![Job Board](./screenshots/board.png)
+
+### 📊 Analytics Dashboard
+![Analytics](./screenshots/analytics.png)
+
+### 🗓 Calendar View
+![Calendar](./screenshots/calendar.png)
+
+### 🌗 Dark / Light Mode
+![Theme](./screenshots/dark-mode.png)
+
+### ➕ Add Job Modal
+![Add Job](./screenshots/add-job-modal.png)
 
 ## ✨ Features
 
