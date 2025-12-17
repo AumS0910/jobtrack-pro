@@ -7,7 +7,7 @@ It helps users visually manage their job applications across different stages us
 
 The application is deployed on **Vercel**.
 
-🔗 Live URL: [https://jobtrack-pro.vercel.app](https://jobtrack-pro-sand.vercel.app/login)
+🔗 Live URL: [https://jobtrack-pro.vercel.app](https://jobtrack-pro-sand.vercel.app/)
 
 ### Deployment Highlights
 - Automatic CI/CD via GitHub
