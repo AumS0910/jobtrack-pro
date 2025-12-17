@@ -66,7 +66,7 @@ export default function Dashboard() {
                                             fill="#8884d8"
                                             dataKey="count"
                                         >
-                                            {statusData.map((entry, index) => (
+                                            {statusData.map((_, index) => (
                                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                             ))}
                                         </Pie>
