@@ -20,17 +20,17 @@ export default function Column({ title, jobs }: ColumnProps) {
                     >
                         <StatusIcon className="w-4 h-4" />
                     </div>
-                    <h2 className="text-sm font-semibold text-white">{title}</h2>
+                    <h2 className="text-sm font-semibold text-black dark:text-white">{title}</h2>
                 </div>
 
-                <span className="text-xs font-semibold text-zinc-400">
+                <span className="text-xs font-semibold text-gray-600 dark:text-zinc-400">
                     {jobs.length}
                 </span>
             </div>
 
             <div className="space-y-3">
                 {jobs.length === 0 ? (
-                    <div className="card text-center py-10 text-zinc-600 text-sm">
+                    <div className="card text-center py-10 text-gray-600 dark:text-zinc-600 text-sm">
                         No applications
                     </div>
                 ) : (

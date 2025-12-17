@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
-    @apply bg-black text-zinc-100 antialiased;
+    @apply antialiased;
   }
 }
 
@@ -15,11 +17,11 @@
 
   /* Card base */
   .card {
-    @apply bg-zinc-900/50 backdrop-blur-sm border border-zinc-800/50 rounded-2xl p-5;
+    @apply bg-gray-50 dark:bg-zinc-900/50 backdrop-blur-sm border border-gray-200 dark:border-zinc-800/50 rounded-2xl p-5;
   }
 
   /* Card hover */
   .card-hover {
-    @apply transition-all duration-200 hover:bg-zinc-900/70 hover:border-zinc-700/50;
+    @apply transition-all duration-200 hover:bg-gray-100 dark:hover:bg-zinc-900/70 hover:border-gray-300 dark:hover:border-zinc-700/50;
   }
 }

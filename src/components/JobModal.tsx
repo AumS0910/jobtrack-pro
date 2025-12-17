@@ -12,7 +12,7 @@ interface JobModalProps {
 export default function JobModal({ onClose, onSubmit }: JobModalProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-            <div className="w-full max-w-md rounded-2xl bg-[#0f0f16] border border-white/10 p-6">
+            <div className="w-full max-w-md rounded-2xl bg-white dark:bg-[#0f0f16] border border-gray-300 dark:border-white/10 p-6">
                 <h2 className="text-lg font-semibold mb-6">
                     Add Job
                 </h2>
@@ -37,19 +37,19 @@ export default function JobModal({ onClose, onSubmit }: JobModalProps) {
                         name="company"
                         placeholder="Company"
                         required
-                        className="w-full rounded-lg bg-[#12121a] border border-white/10 px-4 py-2 text-sm outline-none focus:border-indigo-400"
+                        className="w-full rounded-lg bg-gray-50 dark:bg-[#12121a] border border-gray-300 dark:border-white/10 px-4 py-2 text-sm text-black dark:text-white outline-none focus:border-indigo-400"
                     />
 
                     <input
                         name="role"
                         placeholder="Role"
                         required
-                        className="w-full rounded-lg bg-[#12121a] border border-white/10 px-4 py-2 text-sm outline-none focus:border-indigo-400"
+                        className="w-full rounded-lg bg-gray-50 dark:bg-[#12121a] border border-gray-300 dark:border-white/10 px-4 py-2 text-sm text-black dark:text-white outline-none focus:border-indigo-400"
                     />
 
                     <select
                         name="status"
-                        className="w-full rounded-lg bg-[#12121a] border border-white/10 px-4 py-2 text-sm outline-none focus:border-indigo-400"
+                        className="w-full rounded-lg bg-gray-50 dark:bg-[#12121a] border border-gray-300 dark:border-white/10 px-4 py-2 text-sm text-black dark:text-white outline-none focus:border-indigo-400"
                     >
                         <option>Applied</option>
                         <option>Interview</option>
@@ -61,7 +61,7 @@ export default function JobModal({ onClose, onSubmit }: JobModalProps) {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="text-sm text-zinc-400 hover:text-zinc-200 transition duration-200"
+                            className="text-sm text-gray-600 dark:text-zinc-400 hover:text-gray-800 dark:hover:text-zinc-200 transition duration-200"
                         >
                             Cancel
                         </button>

@@ -16,10 +16,10 @@ export default function Board() {
             {/* Header */}
             <div className="mb-10 flex items-end justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold text-white mb-1">
+                    <h1 className="text-2xl font-bold text-black dark:text-white mb-1">
                         Application Pipeline
                     </h1>
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-sm text-gray-600 dark:text-zinc-400">
                         Track every opportunity in one place
                     </p>
                 </div>
