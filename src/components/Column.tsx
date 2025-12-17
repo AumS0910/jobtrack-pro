@@ -2,6 +2,7 @@ import JobCard from "./JobCard";
 import type { Job } from "../types/job";
 import { statusConfig } from "../constants/statusConfig";
 import type { JobStatus } from "../types/job";
+import { useDroppable } from "@dnd-kit/core";
 
 interface ColumnProps {
     title: JobStatus;
@@ -10,9 +11,12 @@ interface ColumnProps {
 
 export default function Column({ title, jobs }: ColumnProps) {
     const StatusIcon = statusConfig[title].icon;
+    const { setNodeRef, isOver } = useDroppable({
+        id: title,
+    });
 
     return (
-        <div className="flex flex-col gap-4">
+        <div ref={setNodeRef} className={`flex flex-col gap-4 ${isOver ? 'bg-blue-50 dark:bg-blue-900/20 rounded-lg p-2' : ''}`}>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <div

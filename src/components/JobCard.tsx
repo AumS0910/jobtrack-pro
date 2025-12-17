@@ -2,6 +2,7 @@ import type { Job, JobStatus } from "../types/job";
 import { statusConfig } from "../constants/statusConfig";
 import { Building2, Calendar, Trash2 } from "lucide-react";
 import { useJobs } from "../context/JobContext";
+import { useDraggable } from "@dnd-kit/core";
 
 interface JobCardProps {
     job: Job;
@@ -13,15 +14,29 @@ export default function JobCard({ job }: JobCardProps) {
     // ✅ FIX: Properly extract functions from context
     const { updateJob, deleteJob } = useJobs();
 
+    const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
+        id: job.id,
+    });
+
+    const style = transform ? {
+        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
+    } : undefined;
+
     return (
         <div
-            className="
+            ref={setNodeRef}
+            style={style}
+            {...listeners}
+            {...attributes}
+            className={`
         group bg-gray-50 dark:bg-zinc-900/50 backdrop-blur-sm
         rounded-xl p-4
         border border-gray-200 dark:border-zinc-800/50
         transition-all duration-200
         hover:bg-gray-100 dark:hover:bg-zinc-900/70 hover:border-gray-300 dark:hover:border-zinc-700/50
-      "
+        ${isDragging ? 'opacity-50' : ''}
+        cursor-grab active:cursor-grabbing
+      `}
         >
             {/* Top */}
             <div className="flex items-start justify-between mb-3">
