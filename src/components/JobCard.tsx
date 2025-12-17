@@ -1,6 +1,6 @@
 import type { Job, JobStatus } from "../types/job";
 import { statusConfig } from "../constants/statusConfig";
-import { Building2, Calendar, Trash2 } from "lucide-react";
+import { Building2, Calendar, Trash2, GripVertical } from "lucide-react";
 import { useJobs } from "../context/JobContext";
 import { useDraggable } from "@dnd-kit/core";
 
@@ -26,7 +26,6 @@ export default function JobCard({ job }: JobCardProps) {
         <div
             ref={setNodeRef}
             style={style}
-            {...listeners}
             {...attributes}
             className={`
         group bg-gray-50 dark:bg-zinc-900/50 backdrop-blur-sm
@@ -35,9 +34,16 @@ export default function JobCard({ job }: JobCardProps) {
         transition-all duration-200
         hover:bg-gray-100 dark:hover:bg-zinc-900/70 hover:border-gray-300 dark:hover:border-zinc-700/50
         ${isDragging ? 'opacity-50' : ''}
-        cursor-grab active:cursor-grabbing
       `}
         >
+            {/* Drag Handle */}
+            <div
+                {...listeners}
+                className="flex items-center justify-center mb-2 cursor-grab active:cursor-grabbing"
+            >
+                <GripVertical className="w-4 h-4 text-gray-400" />
+            </div>
+
             {/* Top */}
             <div className="flex items-start justify-between mb-3">
                 <div className="flex-1">
